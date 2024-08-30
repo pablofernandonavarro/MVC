@@ -5,7 +5,7 @@ namespace App\Controllers;
 class UserController extends Controller{
 
     public function index(){
-        return"index";
+        return $this->view('users.index');
     }
     public function show($id){
         return"show";
