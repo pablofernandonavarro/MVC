@@ -2,22 +2,24 @@
 
 use Libreria\Route;
 use app\controllers\HomeController;
+use App\Controllers\UserController;
 
 Route::get('/',[HomeController::class,'index']);
 
-Route::get('/usuario',function(){
 
-    return "Hola desde pagina usuario  ";
-});
+// ***************************************   Rutas Usuarios  ************************************************
 
-Route::get('/about',function(){
+Route::get('/usuarios',[UserController::class,'index']) ;
+Route::get('/usuarios/crear',[UserController::class,'create']) ;
+Route::post('/usuarios',[UserController::class,'store']);
+Route::get('/usuarios/:id',[UserController::class,'show']);
+Route::get('/usuarios/:id/editar',[UserController::class,'edit']);
+Route::post('/usuarios/:id',[UserController::class,'update']);
+Route::post('/usuarios/:id/borrar',[UserController::class,'destroy']);
 
-    return "Hola desde pagina about  ";
-});
+// ***************************************   / Rutas Usuarios ************************************************
 
 
-Route::get('/usuario/:slug',function($slug){
 
-    return 'el curso es   =' . $slug;
-});
- Route::pispatch();
+
+Route::pispatch();

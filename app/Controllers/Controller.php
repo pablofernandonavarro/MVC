@@ -14,7 +14,7 @@ class Controller{
             $content= ob_get_clean();
             return $content;
         }else{
-            return "no exixte";
+            return "no existe";
         }
 
     }
